@@ -27,17 +27,14 @@ export class CompraComponent implements OnInit {
     this.clientes=clientes;
   }
   articulo!: Articulo;
-<<<<<<< HEAD
   recibidoArticulo($event){
     this.articulo=$event;
   }
 */
-=======
   //recibidoArticulo($event){
   //  this.articulo=$event;
   //}
 
->>>>>>> b53dee4633e54f144f1bcd024d64e5012e360683
 
   constructor() { }
 
