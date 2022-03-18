@@ -1,4 +1,4 @@
-<div class="">
+<!--
   <ul *ngFor="let client of (ngModel)="cliente">
    <li>{{item.codCliente}}</li>
     <li>{{item.nombre}}</li>
@@ -10,5 +10,14 @@
      <li>{{arti.nombre}}</li>
      <li>{{arti.apellidos}}</li>
   </ul>
+</div>
+-->
+<h1>
+  probando
+</h1>
+<app-clientes (clientesEx)="recogerClientes($event)"></app-clientes>
+
+<div *ngFor="let cliente of clientes">
+<H1>{{cliente.codCliente}}</H1>
 </div>
 

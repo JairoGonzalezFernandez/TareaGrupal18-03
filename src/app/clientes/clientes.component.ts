@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { __exportStar } from 'tslib';
 import { Cliente } from '../interfaces/cliente.interfaces';
 
 @Component({
@@ -7,6 +8,12 @@ import { Cliente } from '../interfaces/cliente.interfaces';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
+
+  @Output() clientesEx = new EventEmitter<Cliente[]>();
+
+  exportarClientes():void{
+    this.clientesEx.emit(this.clientes);
+  }
 
   nombreClienteBuscado!:string;
   clienteMostrar!:Cliente;
