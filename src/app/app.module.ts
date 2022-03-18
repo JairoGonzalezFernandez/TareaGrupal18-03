@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 
 import { ClientesComponent } from './clientes/clientes.component';
+import { CompraComponent } from './compra/compra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticuloComponent,
-    ClientesComponent
+    ClientesComponent,
+    CompraComponent
   ],
   exports:[
     ClientesComponent
