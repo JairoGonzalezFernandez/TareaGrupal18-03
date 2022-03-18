@@ -8,10 +8,24 @@ import { Cliente } from '../interfaces/cliente.interfaces';
 })
 export class ClientesComponent implements OnInit {
 
+  nombreClienteBuscado!:string;
   clienteMostrar!:Cliente;
-  clientes:Cliente[]=[];
+  clientes:Cliente[]=[
+    {
+      codCliente:3,
+    nombre:"asd",
+    apellidos:"asdasd",
+    empresa:"sadas",
+    puesto:"asdasd",
+    cp:444,
+    provincia:"aasd",
+    telefono:76,
+    fechaNacimiento:"sdf"
+    }
+  ];
   buscarCod!:number;
   mostrarTodos:boolean=false;
+
 
   nuevo:Cliente={
     codCliente:0,
@@ -24,6 +38,7 @@ export class ClientesComponent implements OnInit {
     telefono:0,
     fechaNacimiento:""
   }
+
 
   agregar():void{
     if(this.nuevo.codCliente === 0){
@@ -46,14 +61,21 @@ export class ClientesComponent implements OnInit {
     }
   }
 
+
   mostrar():void{
     for(let item of this.clientes){
-      if(this.buscarCod===item.codCliente){
+      if(this.buscarCod==item.codCliente){
         this.clienteMostrar=item;
+        this.nombreClienteBuscado=this.clienteMostrar.nombre;
 
       }
     }
   }
+
+  limpiar():void{
+    this.nombreClienteBuscado="";
+  }
+
 
   mostrarTodosCliente():void{
     if(this.mostrarTodos){
@@ -64,6 +86,8 @@ export class ClientesComponent implements OnInit {
     console.log(this.mostrarTodos);
   }
 
+
+
   eliminar():void{
     for (let i = 0; i < this.clientes.length; i++) {
       if(this.clientes[i].codCliente===this.buscarCod)
@@ -71,9 +95,8 @@ export class ClientesComponent implements OnInit {
     }
   }
 
-  limpiar():void{
-    this.clienteMostrar.nombre="";
-  }
+
+
 
   constructor() { }
 

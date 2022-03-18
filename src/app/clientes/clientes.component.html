@@ -16,18 +16,18 @@
 <button type="button" (click)="mostrarTodosCliente()">Mostrar Clientes</button>
 <div *ngIf="mostrarTodos">
   <li *ngFor="let item of clientes">
-    Codigo cliente: {{item.codCliente}}-
-    Nombre: {{item.nombre}}-
-    Apellidos: {{item.apellidos}}-
-    Empresa: {{item.empresa}}-
-    Puesto: {{item.puesto}}-
-    Codigo Postal: {{item.cp}}-
-    Provincia: {{item.provincia}}-
-    Telefono: {{item.telefono}}-
+    Codigo cliente: {{item.codCliente}}-<br>
+    Nombre: {{item.nombre}}-<br>
+    Apellidos: {{item.apellidos}}-<br>
+    Empresa: {{item.empresa}}-<br>
+    Puesto: {{item.puesto}}-<br>
+    Codigo Postal: {{item.cp}}-<br>
+    Provincia: {{item.provincia}}-<br>
+    Telefono: {{item.telefono}}-<br>
     Fecha nacimiento: {{item.fechaNacimiento}}</li>
 
 </div>
-</div>
+
 
 <br>
 <div>
@@ -36,8 +36,10 @@
   <button type="submit">buscar</button>
   <button type="button" (click)="limpiar()">Limpiar</button>
 </form>
+  <p>{{nombreClienteBuscado}}</p>
 </div>
 <br>
+
 
 <br>
 <form (ngSubmit)="eliminar()">
@@ -47,7 +49,8 @@
 </form>
 <br>
 
-<p>{{clienteMostrar.nombre}}</p>
+
+<label></label>
 
 
 
