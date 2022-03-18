@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { __exportStar } from 'tslib';
 import { Cliente } from '../interfaces/cliente.interfaces';
 
 @Component({
@@ -7,6 +8,13 @@ import { Cliente } from '../interfaces/cliente.interfaces';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
+
+  indice:number=0;
+  @Output() clientesEx = new EventEmitter<Cliente[]>();
+
+  exportarClientes():void{
+    this.clientesEx.emit(this.clientes);
+  }
 
   nombreClienteBuscado!:string;
   clienteMostrar!:Cliente;
@@ -100,11 +108,21 @@ export class ClientesComponent implements OnInit {
     for (let i = 0; i < this.clientes.length; i++) {
 
       if(this.clientes[i].codCliente===this.nuevo.codCliente)
-
-        this.clientes[i]=this.nuevo;
-
+       this.indice=i;
     }
+    this.clientes[this.indice]=this.nuevo;
 
+    this.nuevo={
+      codCliente:0,
+      nombre:"",
+      apellidos:"",
+      empresa:"",
+      puesto:"",
+      cp:0,
+      provincia:"",
+      telefono:0,
+      fechaNacimiento:""
+    }
   }
 
 

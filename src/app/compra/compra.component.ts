@@ -12,6 +12,7 @@ export class CompraComponent implements OnInit {
 
   compras:Compra[]=[];
   compra!: Compra;
+  clientes!:Cliente[];
 
   realizarCompra(codCliente:number,codArticulo:number,fecha:string,unidades:number){
     this.compra.codCliente=codCliente;
@@ -20,15 +21,6 @@ export class CompraComponent implements OnInit {
     this.compra.unidades=unidades;
     this.compras.push(this.compra);
   }
-/*
-  cliente!: Cliente;
-  recibidoCliente($event){
-    this.cliente=$event
-  }
-  articulo!: Articulo;
-  recibidoArticulo($event){
-    this.articulo=$event;
-  }*/
 
 
   constructor() { }
