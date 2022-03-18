@@ -22,16 +22,6 @@ export class CompraComponent implements OnInit {
     this.compras.push(this.compra);
   }
 
-  cliente!: Cliente;
-  exportarClientes(clientes:Cliente[]){
-    this.clientes=clientes;
-    console.log(clientes);
-
-  }
-  articulo!: Articulo;
-  //recibidoArticulo($event){
-  //  this.articulo=$event;
-  //}
 
 
   constructor() { }

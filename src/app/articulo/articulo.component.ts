@@ -11,17 +11,18 @@ nombreArticuloBuscado!:string;
 articuloMostrar!:Articulo;
 buscarCod!:number;
 mostrarTodos:boolean=false;
+indice:number=0;
 
 
 articulos:Articulo[]=[
   {
     codArticulo:12,
-  nombre:"patata",
-  descripcion:"brrr",
-  precioUnidad:12,
-  unidadesStock:22,
-  stockSeguridad:33,
-  imagen:"no hay",
+    nombre:"patata",
+    descripcion:"brrr",
+    precioUnidad:12,
+    unidadesStock:22,
+    stockSeguridad:33,
+    imagen:"no hay",
   }
 ];
 
@@ -102,18 +103,20 @@ nuevo:Articulo={
 
     for (let i = 0; i < this.articulos.length; i++) {
 
-      if(this.articulos[i].codArticulo===this.nuevo.codArticulo)
-
-        this.articulos[i]=this.nuevo;
-
+      if(this.articulos[i].codArticulo===this.nuevo.codArticulo){
+        this.indice=i;
+      }
     }
+    this.articulos[this.indice]=this.nuevo;
 
-
-
-
-    //this.onNuevoCliente.emit(this.nuevo);
-
-    //this.servicio.agregarPersonaje(this.nuevo);
-
-}
+    this.nuevo={
+      codArticulo:0,
+      nombre:"",
+      descripcion:"",
+      precioUnidad:0,
+      unidadesStock:0,
+      stockSeguridad:0,
+      imagen:"",
+    }
+  }
 }
