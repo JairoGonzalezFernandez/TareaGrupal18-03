@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { __exportStar } from 'tslib';
+
 import { Cliente } from '../interfaces/cliente.interfaces';
 
 @Component({
@@ -46,12 +46,12 @@ export class ClientesComponent implements OnInit {
     fechaNacimiento:""
   }
 
-
   agregar():void{
+    this.exportarClientes();
     if(this.nuevo.codCliente === 0){
+
       return;
     }
-
 
     this.clientes.push(this.nuevo);
 

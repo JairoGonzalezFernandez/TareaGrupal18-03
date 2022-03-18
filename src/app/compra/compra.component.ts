@@ -23,8 +23,10 @@ export class CompraComponent implements OnInit {
   }
 
   cliente!: Cliente;
-  recogerClientes(clientes:Cliente[]){
+  exportarClientes(clientes:Cliente[]){
     this.clientes=clientes;
+    console.log(clientes);
+
   }
   articulo!: Articulo;
   //recibidoArticulo($event){

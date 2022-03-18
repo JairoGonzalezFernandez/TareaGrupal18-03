@@ -15,9 +15,9 @@
 <h1>
   probando
 </h1>
-<app-clientes (clientesEx)="recogerClientes($event)"></app-clientes>
+<app-clientes (clientesEx)="exportarClientes($event)"></app-clientes>
 
-<div *ngFor="let cliente of clientes">
-<H1>{{cliente.codCliente}}</H1>
+<div *ngFor="let item of clientes">
+  {{item.nombre}}
 </div>
 
