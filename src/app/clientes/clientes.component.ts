@@ -30,8 +30,7 @@ export class ClientesComponent implements OnInit {
       return;
     }
 
-    //this.onNuevoCliente.emit(this.nuevo);
-    //this.servicio.agregarPersonaje(this.nuevo);
+
     this.clientes.push(this.nuevo);
 
     this.nuevo = {
