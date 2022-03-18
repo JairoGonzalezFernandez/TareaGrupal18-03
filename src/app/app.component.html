@@ -3,18 +3,14 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link "href="#">Artículo</a>
-        <a class="nav-link" href="#">Cliente</a>
-        <a class="nav-link" href="#">Compra</a>
+        <a class="nav-link " routerLink="articulos">Artículo</a>
+        <a class="nav-link" routerLink="clientes">Cliente</a>
+        <a class="nav-link" routerLink="compras">Compra</a>
       </div>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>
 
-<app-clientes></app-clientes>
-<br>
-<br>
-<br>
----
-<app-articulo></app-articulo>
+
 
