@@ -8,6 +8,7 @@ import { Cliente } from '../interfaces/cliente.interfaces';
 })
 export class ClientesComponent implements OnInit {
 
+  indice:number=0;
   nombreClienteBuscado!:string;
   clienteMostrar!:Cliente;
   clientes:Cliente[]=[
@@ -100,11 +101,21 @@ export class ClientesComponent implements OnInit {
     for (let i = 0; i < this.clientes.length; i++) {
 
       if(this.clientes[i].codCliente===this.nuevo.codCliente)
-
-        this.clientes[i]=this.nuevo;
-
+       this.indice=i;
     }
+    this.clientes[this.indice]=this.nuevo;
 
+    this.nuevo={
+      codCliente:0,
+      nombre:"",
+      apellidos:"",
+      empresa:"",
+      puesto:"",
+      cp:0,
+      provincia:"",
+      telefono:0,
+      fechaNacimiento:""
+    }
   }
 
 
