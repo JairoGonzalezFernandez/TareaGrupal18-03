@@ -7,9 +7,23 @@ import { Articulo } from '../interfaces/articulo.interfaces';
   styleUrls: ['./articulo.component.css']
 })
 export class ArticuloComponent implements OnInit {
+nombreArticuloBuscado!:string;
+articuloMostrar!:Articulo;
+buscarCod!:number;
+mostrarTodos:boolean=false;
 
 
-articulos:Articulo[]=[];
+articulos:Articulo[]=[
+  {
+    codArticulo:12,
+  nombre:"patata",
+  descripcion:"brrr",
+  precioUnidad:12,
+  unidadesStock:22,
+  stockSeguridad:33,
+  imagen:"no hay",
+  }
+];
 
 
 nuevo:Articulo={
@@ -53,10 +67,53 @@ nuevo:Articulo={
 
   }
 
+  mostrar():void{
+    for(let item of this.articulos){
+      if(this.buscarCod==item.codArticulo){
+        this.articuloMostrar=item;
+        this.nombreArticuloBuscado=this.articuloMostrar.nombre;
+
+      }
+    }
+  }
+
+  limpiar():void{
+    this.nombreArticuloBuscado="";
+  }
+
+  mostrarTodosArticulos():void{
+    if(this.mostrarTodos){
+      this.mostrarTodos=false;
+    }else{
+      this.mostrarTodos=true;
+    }
+    console.log(this.mostrarTodos);
+  }
+
+
+  eliminar():void{
+    for (let i = 0; i < this.articulos.length; i++) {
+      if(this.articulos[i].codArticulo===this.buscarCod)
+        this.articulos.splice(i);
+    }
+  }
+
+  editar():void{
+
+    for (let i = 0; i < this.articulos.length; i++) {
+
+      if(this.articulos[i].codArticulo===this.nuevo.codArticulo)
+
+        this.articulos[i]=this.nuevo;
+
+    }
+
+
 
 
     //this.onNuevoCliente.emit(this.nuevo);
 
     //this.servicio.agregarPersonaje(this.nuevo);
 
+}
 }

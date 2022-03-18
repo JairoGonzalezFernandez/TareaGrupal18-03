@@ -49,8 +49,27 @@
 </form>
 <br>
 
+<form (ngSubmit)="editar()">
 
-<label></label>
+  <input type="number" name="codCliente" placeholder="introduce un codigo cliente" [(ngModel)]="nuevo.codCliente">
+
+  <input type="text" name="nombre" placeholder="Introduce un nombre" [(ngModel)]="nuevo.nombre">
+
+  <input type="text" name="apellidos" placeholder="Introduce un apellido" [(ngModel)]="nuevo.apellidos">
+
+  <input type="text" name="empresa" placeholder="Introduce una empresa" [(ngModel)]="nuevo.empresa">
+
+  <input type="text" name="puesto" placeholder="Introduce un puesto" [(ngModel)]="nuevo.puesto">
+  <input type="text" name="puesto" placeholder="Introduce un cp" [(ngModel)]="nuevo.cp">
+  <input type="text" name="puesto" placeholder="Introduce un Provincia" [(ngModel)]="nuevo.provincia">
+  <input type="text" name="puesto" placeholder="Introduce un Telefono" [(ngModel)]="nuevo.telefono">
+  <input type="text" name="puesto" placeholder="Introduce una fecha de nacimiento" [(ngModel)]="nuevo.fechaNacimiento">
+
+
+
+  <button type="submit">editar</button>
+
+</form>
 
 
 

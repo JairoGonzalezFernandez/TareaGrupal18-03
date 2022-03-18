@@ -95,6 +95,18 @@ export class ClientesComponent implements OnInit {
     }
   }
 
+  editar():void{
+
+    for (let i = 0; i < this.clientes.length; i++) {
+
+      if(this.clientes[i].codCliente===this.nuevo.codCliente)
+
+        this.clientes[i]=this.nuevo;
+
+    }
+
+  }
+
 
 
 

@@ -18,7 +18,8 @@ import { CompraComponent } from './compra/compra.component';
     CompraComponent
   ],
   exports:[
-    ClientesComponent
+    ClientesComponent,
+    ArticuloComponent
 
   ],
   imports: [

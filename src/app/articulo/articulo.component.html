@@ -4,13 +4,63 @@
 
   <input type="text" name="nombre" placeholder="Introduce un nombre" [(ngModel)]="nuevo.nombre">
 
-  <input type="text" name="descripcion" placeholder="Introduce un apellido" [(ngModel)]="nuevo.descripcion">
+  <input type="text" name="descripcion" placeholder="Introduce un descripcion" [(ngModel)]="nuevo.descripcion">
 
-  <input type="text" name="precioUnidad" placeholder="Introduce una empresa" [(ngModel)]="nuevo.precioUnidad">
-  <input type="text" name="unidadesStock" placeholder="Introduce una empresa" [(ngModel)]="nuevo.unidadesStock">
-  <input type="text" name="stockSeguridad" placeholder="Introduce una empresa" [(ngModel)]="nuevo.stockSeguridad">
-  <input type="text" name="imagen" placeholder="Introduce una empresa" [(ngModel)]="nuevo.imagen">
+  <input type="text" name="precioUnidad" placeholder="Introduce una precioUnidad" [(ngModel)]="nuevo.precioUnidad">
+  <input type="text" name="unidadesStock" placeholder="Introduce una unidadesStock" [(ngModel)]="nuevo.unidadesStock">
+  <input type="text" name="stockSeguridad" placeholder="Introduce una stockSeguridad" [(ngModel)]="nuevo.stockSeguridad">
+  <input type="text" name="imagen" placeholder="Introduce una imagen" [(ngModel)]="nuevo.imagen">
 
   <button type="submit">Agregar Cliente</button>
+
+</form>
+
+<div>
+  <button type="button" (click)="mostrarTodosArticulos()">Mostrar Articulo</button>
+  <div *ngIf="mostrarTodos">
+    <li *ngFor="let item of articulos">
+      Codigo articulo: {{item.codArticulo}}-<br>
+      Nombre: {{item.nombre}}-<br>
+      Descripcion: {{item.descripcion}}-<br>
+      PrecioUnidad: {{item.precioUnidad}-<br>
+      Unidades Stock: {{item.unidadesStock}}-<br>
+      Stock Seguridad: {{item.stockSeguridad}}-<br>
+      Imagen: {{item.imagen}}<br>
+      </li>
+
+  </div>
+
+  <br>
+<div>
+
+<form (ngSubmit)="mostrar()">
+  <input type="number" name="codArticulo" placeholder="introduce un codigo articulo" [(ngModel)]="buscarCod">
+  <button type="submit">buscar</button>
+  <button type="button" (click)="limpiar()">Limpiar</button>
+</form>
+  <p>{{nombreArticuloBuscado}}</p>
+</div>
+<br>
+
+<br>
+<form (ngSubmit)="eliminar()">
+  <input type="number" name="codArticulo" placeholder="introduce un codigo articulo" [(ngModel)]="buscarCod">
+  <button type="submit">delete</button>
+
+</form>
+<br>
+
+<form (ngSubmit)="editar()">
+<input type="text" name="codArticulo" placeholder="introduce un codigo cliente" [(ngModel)]="nuevo.codArticulo">
+
+  <input type="text" name="nombre" placeholder="Introduce un nombre" [(ngModel)]="nuevo.nombre">
+
+  <input type="text" name="descripcion" placeholder="Introduce un descripcion" [(ngModel)]="nuevo.descripcion">
+
+  <input type="text" name="precioUnidad" placeholder="Introduce una precioUnidad" [(ngModel)]="nuevo.precioUnidad">
+  <input type="text" name="unidadesStock" placeholder="Introduce una unidadesStock" [(ngModel)]="nuevo.unidadesStock">
+  <input type="text" name="stockSeguridad" placeholder="Introduce una stockSeguridad" [(ngModel)]="nuevo.stockSeguridad">
+  <input type="text" name="imagen" placeholder="Introduce una imagen" [(ngModel)]="nuevo.imagen">
+  <button type="submit">editar</button>
 
 </form>
